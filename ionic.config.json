@@ -1,0 +1,7 @@
+{
+  "name": "controle-vendas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
