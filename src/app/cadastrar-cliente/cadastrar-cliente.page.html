@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastro do Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Cadastro do cliente  -->
+  <div class="container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Insira os Dados do Cliente</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <!-- Input de Nome  -->
+        <ion-item>
+          <ion-input
+            label="Nome do Cliente"
+            labelPlacement="floating"
+            placeholder="Digite o nome do cliente"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Input de CPF  -->
+        <ion-item>
+          <ion-input
+            label="CPF do Cliente"
+            labelPlacement="floating"
+            placeholder="Digite o CPF do cliente"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Input de Telefone  -->
+        <ion-item>
+          <ion-input
+            label="Telefone do Cliente"
+            labelPlacement="floating"
+            placeholder="Digite o telefone do cliente"
+          ></ion-input>
+        </ion-item>
+
+        <ion-button expand="block">Cadastrar</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
