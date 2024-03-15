@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastrar Veiculos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Cadastro do cliente  -->
+  <div class="container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Insira os Dados dos Veiculos</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <!--Selecionar o cliente referente ao veiculo -->
+        <ion-item>
+          <ion-label>Selecione o Cliente</ion-label>
+          <ion-select
+            placeholder="Selecione o cliente"
+            aria-label="Selecione o Cliente"
+          >
+            <ion-select-option value="1">Cliente 1</ion-select-option>
+            <ion-select-option value="2">Cliente 2</ion-select-option>
+            <ion-select-option value="3">Cliente 3</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Input de Número da Placa do Veiculo -->
+        <ion-item>
+          <ion-input
+            label="Número da Placa"
+            labelPlacement="floating"
+            placeholder="Digite o número da placa"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Input de Cor do Veiculo  -->
+        <ion-item>
+          <ion-input
+            label="Cor do Veiculo"
+            labelPlacement="floating"
+            placeholder="Digite a cor do veiculo"
+          ></ion-input>
+        </ion-item>
+
+        <ion-button expand="block">Cadastrar</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

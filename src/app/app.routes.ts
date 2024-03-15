@@ -17,4 +17,11 @@ export const routes: Routes = [
         (m) => m.CadastrarClientePage
       ),
   },
+  {
+    path: 'cadastrar-veiculos',
+    loadComponent: () =>
+      import('./cadastrar-veiculos/cadastrar-veiculos.page').then(
+        (m) => m.CadastrarVeiculosPage
+      ),
+  },
 ];
