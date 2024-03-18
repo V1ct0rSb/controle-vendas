@@ -24,4 +24,8 @@ export const routes: Routes = [
         (m) => m.CadastrarVeiculosPage
       ),
   },
+  {
+    path: 'encerrar-caixa',
+    loadComponent: () => import('./encerrar-caixa/encerrar-caixa.page').then( m => m.EncerrarCaixaPage)
+  },
 ];
