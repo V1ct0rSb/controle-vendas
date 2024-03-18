@@ -38,13 +38,16 @@
           ></ion-input>
         </ion-item>
 
-        <!-- Input de Cor do Veiculo  -->
+        <!--Selecionar o cliente referente ao veiculo -->
         <ion-item>
-          <ion-input
-            label="Cor do Veiculo"
-            labelPlacement="floating"
-            placeholder="Digite a cor do veiculo"
-          ></ion-input>
+          <ion-label>Tipo</ion-label>
+          <ion-select
+            placeholder="Selecione o Tipo de Veículo"
+            aria-label="Selecione o Tipo de Veículo"
+          >
+            <ion-select-option value="1">Truck</ion-select-option>
+            <ion-select-option value="2">Toco</ion-select-option>
+          </ion-select>
         </ion-item>
 
         <ion-button expand="block">Cadastrar</ion-button>
