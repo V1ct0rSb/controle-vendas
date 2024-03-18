@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>Cadastrar Veiculos</ion-title>
+    <ion-title>Cadastrar Veículos</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,20 +12,16 @@
   <div class="container">
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Insira os Dados dos Veiculos</ion-card-title>
+        <ion-card-title>Insira os Dados dos Veículos</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
         <!--Selecionar o cliente referente ao veiculo -->
         <ion-item>
-          <ion-label>Selecione o Cliente</ion-label>
-          <ion-select
-            placeholder="Selecione o cliente"
-            aria-label="Selecione o Cliente"
-          >
-            <ion-select-option value="1">Cliente 1</ion-select-option>
-            <ion-select-option value="2">Cliente 2</ion-select-option>
-            <ion-select-option value="3">Cliente 3</ion-select-option>
+          <ion-select label="Selecione o Cliente:" placeholder="Cliente">
+            <ion-select-option value="1">Cliente 01</ion-select-option>
+            <ion-select-option value="2">Cliente 02</ion-select-option>
+            <ion-select-option value="3">Cliente 03</ion-select-option>
           </ion-select>
         </ion-item>
 
@@ -38,15 +34,11 @@
           ></ion-input>
         </ion-item>
 
-        <!--Selecionar o cliente referente ao veiculo -->
+        <!--Selecionar o tipo referente ao veiculo -->
         <ion-item>
-          <ion-label>Tipo</ion-label>
-          <ion-select
-            placeholder="Selecione o Tipo de Veículo"
-            aria-label="Selecione o Tipo de Veículo"
-          >
-            <ion-select-option value="1">Truck</ion-select-option>
-            <ion-select-option value="2">Toco</ion-select-option>
+          <ion-select label="Selecione Tipo do Veículo:" placeholder="Tipo">
+            <ion-select-option value="1">Toco</ion-select-option>
+            <ion-select-option value="2">Truck</ion-select-option>
           </ion-select>
         </ion-item>
 
