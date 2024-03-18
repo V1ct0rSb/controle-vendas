@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>Fechar Caixa</ion-title>
+    <ion-title>Encerrar Caixa</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -31,7 +31,7 @@
         <ion-label>Saldo em Crédito: R$ 1000,00</ion-label>
       </ion-item>
     </ion-card-content>
-    <ion-button expand="block"> Encerrar Caixa </ion-button>
+    <ion-button expand="block" [disabled]="true"> Encerrar Caixa </ion-button>
   </ion-card>
 
   <!-- Caixa 02 -->
