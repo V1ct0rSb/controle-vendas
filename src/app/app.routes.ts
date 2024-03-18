@@ -28,4 +28,8 @@ export const routes: Routes = [
     path: 'encerrar-caixa',
     loadComponent: () => import('./encerrar-caixa/encerrar-caixa.page').then( m => m.EncerrarCaixaPage)
   },
+  {
+    path: 'relatorio-vendas',
+    loadComponent: () => import('./relatorio-vendas/relatorio-vendas.page').then( m => m.RelatorioVendasPage)
+  },
 ];
