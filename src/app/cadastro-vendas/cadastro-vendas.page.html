@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastro de Vendas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Insira os Dados de Vendas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- Data da Compra -->
+        <ion-item>
+          <ion-input
+            label="Data da Compra"
+            labelPlacement="floating"
+            placeholder="dd/mm/aaaa"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Nome do Cliente -->
+        <ion-item>
+          <ion-input
+            label="Nome do Cliente"
+            labelPlacement="floating"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Placa do Carro  -->
+        <ion-item>
+          <ion-input
+            label="Placa do Carro"
+            labelPlacement="floating"
+            placeholder="ABC1234"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Tipo -->
+        <ion-item>
+          <ion-select label="Selecione Tipo do Veículo" placeholder="Tipo">
+            <ion-select-option value="1">Toco</ion-select-option>
+            <ion-select-option value="2">Truck</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Total de Venda  -->
+        <ion-item>
+          <ion-input label="Material" labelPlacement="floating"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            label="Total da Venda"
+            labelPlacement="floating"
+            placeholder="R$"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Forma de Pagamento  -->
+        <ion-item>
+          <ion-select label="Forma de Pagamento:" placeholder="Pagamento">
+            <ion-select-option value="1">Pix</ion-select-option>
+            <ion-select-option value="2">Dinheiro</ion-select-option>
+            <ion-select-option value="3">Crédito</ion-select-option>
+            <ion-select-option value="3">Cartão</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Botão de Cadastro -->
+        <ion-button expand="block"> Cadastrar Venda </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
