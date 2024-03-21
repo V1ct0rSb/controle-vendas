@@ -52,4 +52,8 @@ export const routes: Routes = [
         (m) => m.CadastrarDespesasPage
       ),
   },
+  {
+    path: 'buscar-cliente',
+    loadComponent: () => import('./buscar-cliente/buscar-cliente.page').then( m => m.BuscarClientePage)
+  },
 ];
