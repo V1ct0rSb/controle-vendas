@@ -26,22 +26,30 @@ export const routes: Routes = [
   },
   {
     path: 'encerrar-caixa',
-    loadComponent: () => import('./encerrar-caixa/encerrar-caixa.page').then( m => m.EncerrarCaixaPage)
+    loadComponent: () =>
+      import('./encerrar-caixa/encerrar-caixa.page').then(
+        (m) => m.EncerrarCaixaPage
+      ),
   },
   {
     path: 'relatorio-vendas',
-    loadComponent: () => import('./relatorio-vendas/relatorio-vendas.page').then( m => m.RelatorioVendasPage)
-  },
-  {
-    path: 'despesa-receita',
-    loadComponent: () => import('./despesa-receita/despesa-receita.page').then( m => m.DespesaReceitaPage)
+    loadComponent: () =>
+      import('./relatorio-vendas/relatorio-vendas.page').then(
+        (m) => m.RelatorioVendasPage
+      ),
   },
   {
     path: 'cadastro-vendas',
-    loadComponent: () => import('./cadastro-vendas/cadastro-vendas.page').then( m => m.CadastroVendasPage)
+    loadComponent: () =>
+      import('./cadastro-vendas/cadastro-vendas.page').then(
+        (m) => m.CadastroVendasPage
+      ),
   },
   {
     path: 'cadastrar-despesas',
-    loadComponent: () => import('./cadastrar-despesas/cadastrar-despesas.page').then( m => m.CadastrarDespesasPage)
+    loadComponent: () =>
+      import('./cadastrar-despesas/cadastrar-despesas.page').then(
+        (m) => m.CadastrarDespesasPage
+      ),
   },
 ];
