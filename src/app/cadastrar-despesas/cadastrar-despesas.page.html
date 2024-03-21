@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>Registrar Clientes</ion-title>
+    <ion-title>Registrar Despesas e Registros</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,39 +11,48 @@
   <div class="container">
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Insira os Dados dos Clientes</ion-card-title>
+        <ion-card-title>Insira os Dados de Despesas e Receitas</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
         <!-- Input de Nome  -->
         <ion-item>
           <ion-input
-            label="Nome do Cliente"
+            label="Descrição"
+            placeholder="Digite uma Descrição"
             labelPlacement="floating"
-            placeholder="Digite o Nome do Cliente"
           ></ion-input>
         </ion-item>
 
-        <!-- Input de CPF  -->
+        <!-- Input de Quantidade  -->
         <ion-item>
           <ion-input
-            label="CPF do Cliente"
+            label="Quantidade"
+            placeholder="Digite a Quantidade"
             labelPlacement="floating"
-            placeholder="Digite o CPF do Cliente"
           ></ion-input>
         </ion-item>
 
-        <!-- Input de Telefone  -->
+        <!-- Input de Data -->
         <ion-item>
           <ion-input
-            label="Telefone do Cliente"
+            type="date"
+            label="Data"
             labelPlacement="floating"
-            placeholder="Digite o Telefone do Cliente"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Input de Valor -->
+        <ion-item>
+          <ion-input
+            label="Valor"
+            placeholder="R$"
+            labelPlacement="floating"
           ></ion-input>
         </ion-item>
 
         <!-- Botão de Cadastrar  -->
-        <ion-button expand="block">Cadastrar Cliente</ion-button>
+        <ion-button expand="block">Cadastrar Despesas</ion-button>
       </ion-card-content>
     </ion-card>
   </div>
