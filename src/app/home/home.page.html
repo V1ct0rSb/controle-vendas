@@ -14,33 +14,38 @@
   <!-- Menu com os botões de ações que levam para elas -->
   <div class="container">
     <!-- Botão de cadastrar veiculos   -->
-    <ion-button expand="block" (click)="navegarPara('cadastrar-veiculos')"
-      >Cadastrar Veiculos</ion-button
-    >
-
-    <!-- Botão de cadastrar clientes   -->
-    <ion-button expand="block" (click)="navegarPara('cadastrar-cliente')"
-      >Cadastrar Clientes</ion-button
+    <ion-button expand="block" (click)="navegarPara('cadastrar-veiculos')">
+      <img src="assets/icon/carro.png" slot="start" />
+      Cadastrar Veiculos</ion-button
     >
 
     <!-- Botão de Encerrar Caixa   -->
-    <ion-button expand="block" (click)="navegarPara('encerrar-caixa')"
-      >Encerrar Caixa</ion-button
+    <ion-button expand="block" (click)="navegarPara('encerrar-caixa')">
+      <img src="assets/icon/caixa.png" slot="start" />
+      Encerrar Caixa</ion-button
+    >
+
+    <!-- Botão de cadastrar clientes   -->
+    <ion-button expand="block" (click)="navegarPara('cadastrar-cliente')">
+      <img src="assets/icon/cliente.png" slot="start" />
+      Cadastrar Clientes</ion-button
+    >
+
+    <!-- Botão de Cadastro de Vendas  -->
+    <ion-button expand="block" (click)="navegarPara('cadastro-vendas')">
+      <img src="assets/icon/distintivo.png" slot="start" />
+      Cadastrar Vendas</ion-button
     >
 
     <!-- Botão de Relatório de Vendas  -->
     <ion-button expand="block" (click)="navegarPara('relatorio-vendas')"
-      >Relatório de Vendas</ion-button
+      ><img src="assets/icon/aumentar.png" slot="start" /> Relatório de
+      Vendas</ion-button
     >
 
-    <!-- Botão de Despesas e Receitas  -->
-    <ion-button expand="block" (click)="navegarPara('despesa-receita')"
-      >Relatório de Despesas e Receitas</ion-button
-    >
-
-    <!-- Botão de Cadastro de Vendas  -->
-    <ion-button expand="block" (click)="navegarPara('cadastro-vendas')"
-      >Cadastrar Vendas</ion-button
+    <!--Botão de Sair  -->
+    <ion-button expand="block" color="danger"
+      ><img src="assets/icon/sair.png" slot="start" />Sair</ion-button
     >
   </div>
 </ion-content>
