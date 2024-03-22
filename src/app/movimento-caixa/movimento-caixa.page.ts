@@ -18,12 +18,16 @@ import {
   IonBackButton,
   IonSearchbar,
   IonList,
+  IonSelect,
+  IonSelectOption,
+  IonDatetime,
+  IonTextarea,
 } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-buscar-cliente',
-  templateUrl: './buscar-cliente.page.html',
-  styleUrls: ['./buscar-cliente.page.scss'],
+  selector: 'app-movimento-caixa',
+  templateUrl: './movimento-caixa.page.html',
+  styleUrls: ['./movimento-caixa.page.scss'],
   standalone: true,
   imports: [
     IonContent,
@@ -44,8 +48,12 @@ import {
     IonBackButton,
     IonSearchbar,
     IonList,
+    IonSelect,
+    IonSelectOption,
+    IonDatetime,
+    IonTextarea,
   ],
 })
-export class BuscarClientePage  {
+export class MovimentoCaixaPage {
   constructor() {}
 }
