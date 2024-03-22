@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Faça o seu Login</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-input label="Email" type="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input label="Senha" type="password"></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" (click)="navegarPara('home')"
+          >Entrar</ion-button
+        >
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

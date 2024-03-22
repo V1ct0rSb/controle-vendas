@@ -7,7 +7,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
@@ -59,5 +59,9 @@ export const routes: Routes = [
   {
     path: 'movimento-caixa',
     loadComponent: () => import('./movimento-caixa/movimento-caixa.page').then( m => m.MovimentoCaixaPage)
+  },
+  {
+    path: 'login',
+    loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
   },
 ];
