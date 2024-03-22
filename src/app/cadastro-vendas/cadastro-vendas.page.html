@@ -11,15 +11,16 @@
   <div class="container">
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Insira os Dados de Vendas</ion-card-title>
+        <ion-card-title>Preencha os Dados Abaixo</ion-card-title>
       </ion-card-header>
+
       <ion-card-content>
         <!-- Data da Compra -->
         <ion-item>
           <ion-input
+            [(ngModel)]="dataAtual"
             label="Data da Compra"
             labelPlacement="floating"
-            placeholder="dd/mm/aaaa"
           ></ion-input>
         </ion-item>
 

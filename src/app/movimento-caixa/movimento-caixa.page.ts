@@ -55,5 +55,8 @@ import {
   ],
 })
 export class MovimentoCaixaPage {
+  // Data atual
+  dataAtual = new Date().toLocaleDateString('pt-BR');
+
   constructor() {}
 }

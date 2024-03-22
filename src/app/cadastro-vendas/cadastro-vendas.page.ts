@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -50,8 +50,9 @@ import {
     IonDatetime,
   ],
 })
-export class CadastroVendasPage implements OnInit {
-  constructor() {}
+export class CadastroVendasPage {
+  // Data atual
+  dataAtual = new Date().toLocaleDateString('pt-BR');
 
-  ngOnInit() {}
+  constructor() {}
 }
