@@ -11,39 +11,42 @@
   <div class="container">
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Preencha os Dados Abaixo</ion-card-title>
+        <ion-card-title>Cadastre o Cliente</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
-        <!-- Input de Nome  -->
-        <ion-item>
-          <ion-input
-            label="Nome do Cliente"
-            labelPlacement="floating"
-            placeholder="Digite o Nome do Cliente"
-          ></ion-input>
-        </ion-item>
+        <form [formGroup]="clienteForm" (ngSubmit)="cadastrarCliente()">
+          <ion-item>
+            <ion-input
+              label="Nome"
+              formControlName="nome"
+              type="text"
+              placeholder="Digite o nome do cliente"
+            ></ion-input>
+          </ion-item>
 
-        <!-- Input de CPF  -->
-        <ion-item>
-          <ion-input
-            label="CPF do Cliente"
-            labelPlacement="floating"
-            placeholder="Digite o CPF do Cliente"
-          ></ion-input>
-        </ion-item>
+          <ion-item>
+            <ion-input
+              label="CPF/CNPJ"
+              formControlName="cpfCnpj"
+              type="text"
+              placeholder="Digite o CPF ou CNPJ do cliente"
+            ></ion-input>
+          </ion-item>
 
-        <!-- Input de Telefone  -->
-        <ion-item>
-          <ion-input
-            label="Telefone do Cliente"
-            labelPlacement="floating"
-            placeholder="Digite o Telefone do Cliente"
-          ></ion-input>
-        </ion-item>
+          <ion-item>
+            <ion-input
+              label="Telefone"
+              formControlName="telefone"
+              type="text"
+              placeholder="Digite o telefone do cliente"
+            ></ion-input>
+          </ion-item>
 
-        <!-- Botão de Cadastrar  -->
-        <ion-button expand="block">Cadastrar Cliente</ion-button>
+          <ion-button expand="block" type="submit"
+            >Cadastrar Cliente</ion-button
+          >
+        </form>
       </ion-card-content>
     </ion-card>
   </div>

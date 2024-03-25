@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastController } from '@ionic/angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { validateCpfCnpj, validateTelefone } from './validacaoCliente';
 
 import {
   IonContent,
@@ -41,8 +44,47 @@ import {
     IonButton,
     IonButtons,
     IonBackButton,
+    ReactiveFormsModule,
   ],
 })
 export class CadastrarClientePage {
-  constructor() {}
+  clienteForm: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private toastController: ToastController
+  ) {
+    this.clienteForm = this.formBuilder.group({
+      nome: ['', Validators.required],
+      cpfCnpj: ['', [Validators.required, validateCpfCnpj]],
+      telefone: ['', [Validators.required, validateTelefone]],
+    });
+  }
+
+  async cadastrarCliente() {
+    if (this.clienteForm && this.clienteForm.valid) {
+      console.warn(this.clienteForm.value);
+      const toast = await this.toastController.create({
+        message: 'Cliente cadastrado com sucesso!',
+        duration: 2000,
+        color: 'success',
+      });
+      toast.present();
+    } else {
+      let errorMessage = 'Por favor, preencha todos os campos obrigatórios.';
+      if (this.clienteForm?.get('cpfCnpj')?.hasError('cpfCnpjNotValid')) {
+        errorMessage = 'O CPF/CNPJ inserido não é válido.';
+      } else if (
+        this.clienteForm?.get('telefone')?.hasError('telefoneNotValid')
+      ) {
+        errorMessage = 'O telefone inserido não é válido.';
+      }
+      const toast = await this.toastController.create({
+        message: errorMessage,
+        duration: 2000,
+        color: 'danger',
+      });
+      toast.present();
+    }
+  }
 }

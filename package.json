@@ -30,6 +30,7 @@
     "@capacitor/keyboard": "next",
     "@capacitor/status-bar": "next",
     "@ionic/angular": "^7.5.0",
+    "cpf-cnpj-validator": "^1.0.3",
     "ionicons": "^7.2.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
