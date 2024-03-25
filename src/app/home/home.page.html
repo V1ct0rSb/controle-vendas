@@ -13,22 +13,28 @@
 
   <!-- Menu com os botões de ações que levam para elas -->
   <div class="container">
+    <!-- Botão de cadastrar clientes   -->
+    <ion-button expand="block" (click)="navegarPara('cadastrar-cliente')">
+      <img src="assets/icon/cliente.png" slot="start" />
+      Registrar Clientes</ion-button
+    >
+
+    <!-- Botão Procurar Clientes  -->
+    <ion-button expand="block" (click)="navegarPara('buscar-cliente')"
+      ><img src="assets/icon/procurando.png" slot="start" /> Procurar
+      Clientes</ion-button
+    >
+
     <!-- Botão de cadastrar veiculos   -->
     <ion-button expand="block" (click)="navegarPara('cadastrar-veiculos')">
       <img src="assets/icon/carro.png" slot="start" />
       Registrar Veiculos</ion-button
     >
 
-    <!-- Botão de Encerrar Caixa   -->
-    <ion-button expand="block" (click)="navegarPara('encerrar-caixa')">
-      <img src="assets/icon/caixa.png" slot="start" />
-      Encerrar Caixa</ion-button
-    >
-
-    <!-- Botão de cadastrar clientes   -->
-    <ion-button expand="block" (click)="navegarPara('cadastrar-cliente')">
-      <img src="assets/icon/cliente.png" slot="start" />
-      Registrar Clientes</ion-button
+    <!-- Botão de Movimentação do Caixa  -->
+    <ion-button expand="block" (click)="navegarPara('movimento-caixa')"
+      ><img src="assets/icon/dinheiro.png" slot="start" /> Movimento de
+      Caixa</ion-button
     >
 
     <!-- Botão de Cadastro de Vendas  -->
@@ -49,16 +55,10 @@
       Receitas</ion-button
     >
 
-    <!-- Botão Procurar Clientes  -->
-    <ion-button expand="block" (click)="navegarPara('buscar-cliente')"
-      ><img src="assets/icon/procurando.png" slot="start" /> Procurar
-      Clientes</ion-button
-    >
-
-    <!-- Botão de Movimentação do Caixa  -->
-    <ion-button expand="block" (click)="navegarPara('movimento-caixa')"
-      ><img src="assets/icon/dinheiro.png" slot="start" /> Movimento de
-      Caixa</ion-button
+    <!-- Botão de Encerrar Caixa   -->
+    <ion-button expand="block" (click)="navegarPara('encerrar-caixa')">
+      <img src="assets/icon/caixa.png" slot="start" />
+      Encerrar Caixa</ion-button
     >
 
     <!--Botão de Sair  -->

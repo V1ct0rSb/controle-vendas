@@ -13,11 +13,21 @@
 
       <ion-card-content>
         <ion-item>
-          <ion-input label="Email" type="email"></ion-input>
+          <ion-input
+            label="Email"
+            type="email"
+            labelPlacement="floating"
+            placeholder="SeuEmail@example.com"
+          ></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-input label="Senha" type="password"></ion-input>
+          <ion-input
+            label="Senha"
+            type="password"
+            labelPlacement="floating"
+            placeholder="********"
+          ></ion-input>
         </ion-item>
 
         <ion-button expand="block" (click)="navegarPara('home')"
