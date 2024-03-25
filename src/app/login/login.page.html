@@ -12,27 +12,37 @@
       </ion-card-header>
 
       <ion-card-content>
-        <ion-item>
-          <ion-input
-            label="Email"
-            type="email"
-            labelPlacement="floating"
-            placeholder="SeuEmail@example.com"
-          ></ion-input>
-        </ion-item>
+        <form [formGroup]="loginForm" (ngSubmit)="fazerLogin()">
+          <ion-item>
+            <ion-input
+              label="CPF"
+              formControlName="cpf"
+              type="text"
+              placeholder="Digite seu CPF"
+            ></ion-input>
+          </ion-item>
 
-        <ion-item>
-          <ion-input
-            label="Senha"
-            type="password"
-            labelPlacement="floating"
-            placeholder="********"
-          ></ion-input>
-        </ion-item>
+          <ion-item>
+            <ion-input
+              label="Senha"
+              formControlName="senha"
+              [type]="showPassword ? 'text' : 'password'"
+              placeholder="Digite sua senha"
+            ></ion-input>
+            <ion-button
+              fill="clear"
+              slot="end"
+              (click)="showPassword = !showPassword"
+            >
+              <img
+                [src]="showPassword ? 'assets/icon/visivel.png' : 'assets/icon/olho.png'"
+                alt="Toggle password visibility"
+              />
+            </ion-button>
+          </ion-item>
 
-        <ion-button expand="block" (click)="navegarPara('home')"
-          >Entrar</ion-button
-        >
+          <ion-button expand="block" type="submit">Entrar</ion-button>
+        </form>
       </ion-card-content>
     </ion-card>
   </div>

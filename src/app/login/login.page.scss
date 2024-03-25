@@ -13,3 +13,15 @@ ion-button {
   margin: 2.5rem auto 0 auto;
   width: 70%;
 }
+
+// Ver senha
+ion-item ion-button {
+  max-width: 40px;
+  height: auto;
+  margin: 10px auto auto auto;
+}
+
+ion-button img {
+  max-width: 28px;
+  height: auto;
+}
