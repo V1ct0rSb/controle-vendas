@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { validateCpfCnpj, validateTelefone } from './validacaoCliente';
+import { FormGroup } from '@angular/forms';
 
 import {
   IonContent,
@@ -65,7 +66,7 @@ export class CadastrarClientePage {
     if (this.clienteForm && this.clienteForm.valid) {
       console.warn(this.clienteForm.value);
       const toast = await this.toastController.create({
-        message: 'Cliente cadastrado com sucesso!',
+        message: 'Cliente registrado com sucesso!',
         duration: 2000,
         color: 'success',
       });

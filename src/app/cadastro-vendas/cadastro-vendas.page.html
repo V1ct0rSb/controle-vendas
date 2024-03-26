@@ -8,43 +8,78 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="container">
+  <!-- Selecionar Forma de Pagamento  -->
+  <ion-segment [(ngModel)]="segmentoSelecionado" value="umaForma">
+    <ion-segment-button value="umaForma">
+      <ion-label>Pagamento Único</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="variasFormas">
+      <ion-label>Várias Formas </ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Uma forma de pagamento  -->
+  <div *ngIf="segmentoSelecionado === 'umaForma'">
     <ion-card>
       <ion-card-header>
         <ion-card-title>Preencha os Dados Abaixo</ion-card-title>
       </ion-card-header>
 
-      <ion-card-content>
+      <form [formGroup]="vendaForm" (ngSubmit)="cadastrarVenda()">
         <!-- Data da Compra -->
         <ion-item>
+          <ion-label position="floating">Data da Compra</ion-label>
           <ion-input
-            [(ngModel)]="dataAtual"
-            label="Data da Compra"
+            type="date"
+            formControlName="dataCompra"
+            aria-label="Data da Compra"
+            labelPlacement="floating"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Hora da Compra -->
+        <ion-item>
+          <ion-label position="floating">Hora da Compra</ion-label>
+          <ion-input
+            type="time"
+            formControlName="horaCompra"
+            aria-label="Hora da Compra"
             labelPlacement="floating"
           ></ion-input>
         </ion-item>
 
         <!-- Nome do Cliente -->
         <ion-item>
-          <ion-input
-            label="Nome do Cliente"
-            labelPlacement="floating"
-            placeholder="Digite o Nome do Cliente"
-          ></ion-input>
+          <ion-select
+            formControlName="cliente"
+            label="Selecione o Cliente"
+            placeholder="Cliente"
+          >
+            <ion-select-option value="1">Cliente 01</ion-select-option>
+            <ion-select-option value="2">Cliente 02</ion-select-option>
+          </ion-select>
         </ion-item>
 
         <!-- Placa do Carro  -->
         <ion-item>
-          <ion-input
-            label="Placa do Carro"
-            labelPlacement="floating"
-            placeholder="ABC1234"
-          ></ion-input>
+          <ion-select
+            formControlName="placaCarro"
+            label="Selecione a Placa do Carro"
+            placeholder="Placa do Carro"
+          >
+            <ion-select-option value="1">NVN9654</ion-select-option>
+            <ion-select-option value="2">WWA9865</ion-select-option>
+          </ion-select>
         </ion-item>
 
         <!-- Tipo -->
         <ion-item>
-          <ion-select label="Selecione Tipo do Veículo" placeholder="Tipo">
+          <ion-select
+            formControlName="tipoVeiculo"
+            label="Selecione o Tipo do Veículo"
+            placeholder="Tipo"
+          >
             <ion-select-option value="1">Toco</ion-select-option>
             <ion-select-option value="2">Truck</ion-select-option>
           </ion-select>
@@ -52,18 +87,24 @@
 
         <!-- Material  -->
         <ion-item>
-          <ion-select label="Selecione o Material" placeholder="Material">
+          <ion-select
+            formControlName="material"
+            label="Selecione o Material"
+            placeholder="Material"
+          >
             <ion-select-option value="1">Tijolos</ion-select-option>
             <ion-select-option value="2">Telhas Cerâmicas</ion-select-option>
-            <ion-select-option value="2">Areia</ion-select-option>
-            <ion-select-option value="2">Brita</ion-select-option>
-            <ion-select-option value="2">Cerâmicas</ion-select-option>
+            <ion-select-option value="3">Areia</ion-select-option>
+            <ion-select-option value="4">Brita</ion-select-option>
+            <ion-select-option value="5">Cerâmicas</ion-select-option>
           </ion-select>
         </ion-item>
 
         <!-- Total de Venda  -->
         <ion-item>
           <ion-input
+            type="number"
+            formControlName="totalVenda"
             label="Total da Venda"
             labelPlacement="floating"
             placeholder="R$"
@@ -72,17 +113,185 @@
 
         <!-- Forma de Pagamento  -->
         <ion-item>
-          <ion-select label="Forma de Pagamento:" placeholder="Pagamento">
+          <ion-select
+            formControlName="formaPagamento"
+            label="Forma de Pagamento:"
+            placeholder="Pagamento"
+          >
             <ion-select-option value="1">Pix</ion-select-option>
             <ion-select-option value="2">Dinheiro</ion-select-option>
             <ion-select-option value="3">Crédito</ion-select-option>
-            <ion-select-option value="3">Cartão</ion-select-option>
+            <ion-select-option value="4">Cartão</ion-select-option>
           </ion-select>
         </ion-item>
 
         <!-- Botão de Cadastro -->
-        <ion-button expand="block"> Registrar Venda </ion-button>
-      </ion-card-content>
+        <ion-button expand="block" type="submit"> Registrar Venda </ion-button>
+      </form>
+    </ion-card>
+  </div>
+
+  <!-- Várias formas de pagamento  -->
+  <div *ngIf="segmentoSelecionado === 'variasFormas'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Selecione as Formas de Pagamento</ion-card-title>
+      </ion-card-header>
+
+      <form [formGroup]="vendaForm">
+        <!-- Data da Compra -->
+        <ion-item>
+          <ion-label position="floating">Data da Compra</ion-label>
+          <ion-input
+            type="date"
+            formControlName="dataCompra"
+            aria-label="Data da Compra"
+            labelPlacement="floating"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Hora da Compra -->
+        <ion-item>
+          <ion-label position="floating">Hora da Compra</ion-label>
+          <ion-input
+            type="time"
+            formControlName="horaCompra"
+            aria-label="Hora da Compra"
+            labelPlacement="floating"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Nome do Cliente -->
+        <ion-item>
+          <ion-select
+            formControlName="cliente"
+            label="Selecione o Cliente"
+            placeholder="Cliente"
+          >
+            <ion-select-option value="1">Cliente 01</ion-select-option>
+            <ion-select-option value="2">Cliente 02</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Placa do Carro  -->
+        <ion-item>
+          <ion-select
+            formControlName="placaCarro"
+            label="Selecione a Placa do Carro"
+            placeholder="Placa do Carro"
+          >
+            <ion-select-option value="1">NVN9654</ion-select-option>
+            <ion-select-option value="2">WWA9865</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Tipo -->
+        <ion-item>
+          <ion-select
+            formControlName="tipoVeiculo"
+            label="Selecione o Tipo do Veículo"
+            placeholder="Tipo"
+          >
+            <ion-select-option value="1">Toco</ion-select-option>
+            <ion-select-option value="2">Truck</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Material  -->
+        <ion-item>
+          <ion-select
+            formControlName="material"
+            label="Selecione o Material"
+            placeholder="Material"
+          >
+            <ion-select-option value="1">Tijolos</ion-select-option>
+            <ion-select-option value="2">Telhas Cerâmicas</ion-select-option>
+            <ion-select-option value="3">Areia</ion-select-option>
+            <ion-select-option value="4">Brita</ion-select-option>
+            <ion-select-option value="5">Cerâmicas</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Total de Venda  -->
+        <ion-item>
+          <ion-input
+            type="number"
+            formControlName="totalVenda"
+            label="Total da Venda"
+            labelPlacement="floating"
+            placeholder="R$"
+          ></ion-input>
+        </ion-item>
+
+        <!-- Formas de Pagamento -->
+        <ion-item>
+          <ion-checkbox
+            [checked]="pixSelecionado"
+            (ionChange)="pixSelecionado = !pixSelecionado"
+            >Pix</ion-checkbox
+          >
+        </ion-item>
+
+        <ion-item *ngIf="pixSelecionado">
+          <ion-input
+            type="number"
+            placeholder="Valor do Pix"
+            formControlName="valorPix"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-checkbox
+            [checked]="dinheiroSelecionado"
+            (ionChange)="dinheiroSelecionado = !dinheiroSelecionado"
+            >Dinheiro</ion-checkbox
+          >
+        </ion-item>
+
+        <ion-item *ngIf="dinheiroSelecionado">
+          <ion-input
+            type="number"
+            placeholder="Valor em Dinheiro"
+            formControlName="valorDinheiro"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-checkbox
+            [checked]="creditoSelecionado"
+            (ionChange)="creditoSelecionado = !creditoSelecionado"
+            >Crédito</ion-checkbox
+          >
+        </ion-item>
+
+        <ion-item *ngIf="creditoSelecionado">
+          <ion-input
+            type="number"
+            placeholder="Valor no Crédito"
+            formControlName="valorCredito"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-checkbox
+            [checked]="cartaoSelecionado"
+            (ionChange)="cartaoSelecionado = !cartaoSelecionado"
+            >Cartão</ion-checkbox
+          >
+        </ion-item>
+        
+        <ion-item *ngIf="cartaoSelecionado">
+          <ion-input
+            type="number"
+            placeholder="Valor no Cartão"
+            formControlName="valorCartao"
+          ></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" type="submit" (click)="cadastrarVenda()"
+          >Registrar Venda</ion-button
+        >
+      </form>
     </ion-card>
   </div>
 </ion-content>
