@@ -69,29 +69,80 @@ export class CadastroVendasPage implements OnInit {
   dataAtual: string = '';
   horaAtual: string = '';
 
-  // Segmento selecionado
-  segmentoSelecionado = 'umaForma';
-
   vendaForm: FormGroup;
 
   constructor(
     private toastController: ToastController,
     private formBuilder: FormBuilder
   ) {
-    this.vendaForm = this.formBuilder.group({
-      dataCompra: ['', Validators.required],
-      horaCompra: ['', Validators.required],
-      cliente: ['', Validators.required],
-      placaCarro: ['', Validators.required],
-      tipoVeiculo: ['', Validators.required],
-      material: ['', Validators.required],
-      totalVenda: ['', Validators.required],
-      formaPagamento: [', '],
-      valorPix: [''],
-      valorDinheiro: [''],
-      valorCredito: [''],
-      valorCartao: [''],
-    });
+    this.vendaForm = this.formBuilder.group(
+      {
+        dataCompra: ['', Validators.required],
+        horaCompra: ['', Validators.required],
+        cliente: ['', Validators.required],
+        placaCarro: ['', Validators.required],
+        tipoVeiculo: ['', Validators.required],
+        material: ['', Validators.required],
+        totalVenda: ['', Validators.required],
+        pixSelecionado: [false],
+        valorPix: [''],
+        dinheiroSelecionado: [false],
+        valorDinheiro: [''],
+        creditoSelecionado: [false],
+        valorCredito: [''],
+        cartaoSelecionado: [false],
+        valorCartao: [''],
+      },
+      { validators: [this.checkTotal, this.checkPayment] }
+    );
+  }
+
+  checkPayment = (group: FormGroup) => {
+    if (
+      group.controls['pixSelecionado'].value &&
+      !group.controls['valorPix'].value
+    ) {
+      return { pixNotProvided: true };
+    }
+    if (
+      group.controls['dinheiroSelecionado'].value &&
+      !group.controls['valorDinheiro'].value
+    ) {
+      return { dinheiroNotProvided: true };
+    }
+    if (
+      group.controls['creditoSelecionado'].value &&
+      !group.controls['valorCredito'].value
+    ) {
+      return { creditoNotProvided: true };
+    }
+    if (
+      group.controls['cartaoSelecionado'].value &&
+      !group.controls['valorCartao'].value
+    ) {
+      return { cartaoNotProvided: true };
+    }
+    return null;
+  };
+
+  checkTotal(group: FormGroup) {
+    const totalVenda = group.controls['totalVenda'].value;
+    const valorPix = group.controls['pixSelecionado'].value
+      ? group.controls['valorPix'].value || 0
+      : 0;
+    const valorDinheiro = group.controls['dinheiroSelecionado'].value
+      ? group.controls['valorDinheiro'].value || 0
+      : 0;
+    const valorCredito = group.controls['creditoSelecionado'].value
+      ? group.controls['valorCredito'].value || 0
+      : 0;
+    const valorCartao = group.controls['cartaoSelecionado'].value
+      ? group.controls['valorCartao'].value || 0
+      : 0;
+
+    const totalPago = valorPix + valorDinheiro + valorCredito + valorCartao;
+
+    return totalPago === totalVenda ? null : { notEqual: true };
   }
 
   // Data e Hora atual
@@ -105,10 +156,20 @@ export class CadastroVendasPage implements OnInit {
       dataCompra: this.dataAtual,
       horaCompra: this.horaAtual,
     });
+    this.checkPayment(this.vendaForm);
+    this.checkTotal(this.vendaForm);
   }
 
   async cadastrarVenda() {
-    if (this.vendaForm.valid) {
+    const errors = this.vendaForm.errors;
+    if (
+      this.vendaForm.valid &&
+      !errors?.['notEqual'] &&
+      !errors?.['pixNotProvided'] &&
+      !errors?.['dinheiroNotProvided'] &&
+      !errors?.['creditoNotProvided'] &&
+      !errors?.['cartaoNotProvided']
+    ) {
       console.warn(this.vendaForm.value);
       const toast = await this.toastController.create({
         message: 'Venda registrada com sucesso!',
@@ -131,8 +192,21 @@ export class CadastroVendasPage implements OnInit {
         horaCompra: this.horaAtual,
       });
     } else {
+      let message = 'Por favor, preencha todos os campos obrigatórios.';
+      if (errors?.['notEqual']) {
+        message =
+          'A soma dos valores de pagamento deve ser igual ao valor total da venda.';
+      } else if (
+        errors?.['pixNotProvided'] ||
+        errors?.['dinheiroNotProvided'] ||
+        errors?.['creditoNotProvided'] ||
+        errors?.['cartaoNotProvided']
+      ) {
+        message =
+          'Por favor, forneça o valor para cada forma de pagamento selecionada.';
+      }
       const toast = await this.toastController.create({
-        message: 'Por favor, preencha todos os campos obrigatórios.',
+        message: message,
         duration: 2000,
         color: 'danger',
       });
