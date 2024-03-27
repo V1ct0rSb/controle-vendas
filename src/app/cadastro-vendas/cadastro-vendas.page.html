@@ -104,6 +104,7 @@
         <ion-checkbox
           slot="end"
           formControlName="pixSelecionado"
+          aria-label="Pix"
         ></ion-checkbox>
       </ion-item>
       <ion-item *ngIf="vendaForm?.get('pixSelecionado')?.value">
@@ -119,6 +120,7 @@
         <ion-checkbox
           slot="end"
           formControlName="dinheiroSelecionado"
+          aria-label="Dinheiro"
         ></ion-checkbox>
       </ion-item>
       <ion-item *ngIf="vendaForm?.get('dinheiroSelecionado')?.value">
@@ -134,6 +136,7 @@
         <ion-checkbox
           slot="end"
           formControlName="creditoSelecionado"
+          aria-label="Crédito"
         ></ion-checkbox>
       </ion-item>
       <ion-item *ngIf="vendaForm?.get('creditoSelecionado')?.value">
@@ -149,6 +152,7 @@
         <ion-checkbox
           slot="end"
           formControlName="cartaoSelecionado"
+          aria-label="Cartão"
         ></ion-checkbox>
       </ion-item>
       <ion-item *ngIf="vendaForm?.get('cartaoSelecionado')?.value">
