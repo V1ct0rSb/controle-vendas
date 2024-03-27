@@ -15,34 +15,42 @@
       </ion-card-header>
 
       <ion-card-content>
-        <!--Selecionar o cliente referente ao veículo -->
-        <ion-item>
-          <ion-select label="Selecione o Cliente:" placeholder="Cliente">
-            <ion-select-option value="1">Cliente 01</ion-select-option>
-            <ion-select-option value="2">Cliente 02</ion-select-option>
-            <ion-select-option value="3">Cliente 03</ion-select-option>
-          </ion-select>
-        </ion-item>
+        <form [formGroup]="veiculoForm" (ngSubmit)="cadastrarVeiculo()">
+          <!--Selecionar o cliente referente ao veículo -->
+          <ion-item>
+            <ion-select formControlName="cliente" label="Selecione o Cliente:">
+              <ion-select-option value="1">Cliente 01</ion-select-option>
+              <ion-select-option value="2">Cliente 02</ion-select-option>
+              <ion-select-option value="3">Cliente 03</ion-select-option>
+            </ion-select>
+          </ion-item>
 
-        <!-- Input de Número da Placa do Veiculo -->
-        <ion-item>
-          <ion-input
-            label="Número da Placa"
-            labelPlacement="floating"
-            placeholder="ABC1234"
-          ></ion-input>
-        </ion-item>
+          <!-- Input de Número da Placa do Veiculo -->
+          <ion-item>
+            <ion-input
+              type="text"
+              formControlName="placa"
+              placeholder="ABC1234"
+              label="Número da Placa"
+            ></ion-input>
+          </ion-item>
 
-        <!--Selecionar o tipo referente ao veiculo -->
-        <ion-item>
-          <ion-select label="Selecione Tipo do Veículo:" placeholder="Tipo">
-            <ion-select-option value="1">Toco</ion-select-option>
-            <ion-select-option value="2">Truck</ion-select-option>
-          </ion-select>
-        </ion-item>
+          <!--Selecionar o tipo referente ao veiculo -->
+          <ion-item>
+            <ion-select
+              formControlName="tipo"
+              label="Selecione Tipo do Veículo:"
+            >
+              <ion-select-option value="1">Toco</ion-select-option>
+              <ion-select-option value="2">Truck</ion-select-option>
+            </ion-select>
+          </ion-item>
 
-        <!-- Botão de cadastro -->
-        <ion-button expand="block">Registrar Veículo</ion-button>
+          <!-- Botão de cadastro -->
+          <ion-button type="submit" expand="block"
+            >Registrar Veículo</ion-button
+          >
+        </form>
       </ion-card-content>
     </ion-card>
   </div>

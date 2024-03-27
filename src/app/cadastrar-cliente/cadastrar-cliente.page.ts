@@ -3,8 +3,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { validateCpfCnpj, validateTelefone } from './validacaoCliente';
 import { FormGroup } from '@angular/forms';
+import { validateCpfCnpj, validateTelefone } from './validacaoCliente';
 
 import {
   IonContent,
@@ -16,7 +16,6 @@ import {
   IonCardTitle,
   IonCardContent,
   IonItem,
-  IonLabel,
   IonInput,
   IonButton,
   IonButtons,
@@ -40,7 +39,6 @@ import {
     IonCardTitle,
     IonCardContent,
     IonItem,
-    IonLabel,
     IonInput,
     IonButton,
     IonButtons,
@@ -71,6 +69,9 @@ export class CadastrarClientePage {
         color: 'success',
       });
       toast.present();
+
+      // Limpar o formulário
+      this.clienteForm.reset();
     } else {
       let errorMessage = 'Por favor, preencha todos os campos obrigatórios.';
       if (this.clienteForm?.get('cpfCnpj')?.hasError('cpfCnpjNotValid')) {
