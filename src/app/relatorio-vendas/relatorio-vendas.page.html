@@ -8,30 +8,61 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-searchbar placeholder="Digite o Nome do Cliente"></ion-searchbar>
   <!-- Cliente 01  -->
   <ion-card>
     <ion-card-content>
-      <ion-item>
-        <ion-label>Data da Compra: 11/10/2010</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Nome do Cliente: João</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Placa do Carro: NBR8754</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Tipo: Toco</ion-label>
-      </ion-item>
+      <ion-card-header>
+        <ion-card-title>João Pereira Santos</ion-card-title>
+      </ion-card-header>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>Data: 11/10/2010</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>Hora: 11:11</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>Placa: NBR8754</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>Tipo: Toco</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
       <ion-item>
         <ion-label>Material: Areia Média</ion-label>
       </ion-item>
       <ion-item>
-        <ion-label>Total: R$ 5.000,00</ion-label>
+        <ion-label>Total da Venda: 5.000,00</ion-label>
       </ion-item>
-      <ion-item>
-        <ion-label>Forma de Pagamento: Crédito</ion-label>
-      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>Dinheiro: 1000,00</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Pix: 2000,00</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>Crédito: 3000,00</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Cartão: 0</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
       <!-- Botão de Imprimir -->
       <ion-button expand="block" color="primary">Imprimir</ion-button>
@@ -41,27 +72,57 @@
   <!-- Cliente 02 -->
   <ion-card>
     <ion-card-content>
-      <ion-item>
-        <ion-label>Data da Compra: 10/10/2010</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Nome do Cliente: João</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Placa do Carro: NBR8754</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Tipo: Track</ion-label>
-      </ion-item>
+      <ion-card-header>
+        <ion-card-title>Mateus Correia Oliveira Alves</ion-card-title>
+      </ion-card-header>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>Data: 11/10/2010</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>Hora: 11:11</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>Placa: NBR8754</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>Tipo: Toco</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
       <ion-item>
         <ion-label>Material: Areia Média</ion-label>
       </ion-item>
       <ion-item>
-        <ion-label>Total: R$ 3.000,00</ion-label>
+        <ion-label>Total da Venda: 2000,00</ion-label>
       </ion-item>
-      <ion-item>
-        <ion-label>Forma de Pagamento: Pix</ion-label>
-      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>Dinheiro: 0</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Pix: 2000,00</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>Crédito: 0</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Cartão: 0</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
       <!-- Botão de Imprimir -->
       <ion-button expand="block" color="primary">Imprimir</ion-button>

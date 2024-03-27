@@ -18,7 +18,9 @@ import {
   IonBackButton,
   IonSelect,
   IonSelectOption,
-  IonList,
+  IonRow,
+  IonCol,
+  IonSearchbar,
 } from '@ionic/angular/standalone';
 
 @Component({
@@ -45,7 +47,9 @@ import {
     IonBackButton,
     IonSelect,
     IonSelectOption,
-    IonList,
+    IonRow,
+    IonCol,
+    IonSearchbar,
   ],
 })
 export class RelatorioVendasPage {
