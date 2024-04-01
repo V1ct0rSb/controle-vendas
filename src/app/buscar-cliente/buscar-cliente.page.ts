@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import {
   IonContent,
   IonHeader,
@@ -46,6 +47,10 @@ import {
     IonList,
   ],
 })
-export class BuscarClientePage  {
-  constructor() {}
+export class BuscarClientePage {
+  constructor(private router: Router) {}
+
+  navegarPara(rota: string) {
+    this.router.navigateByUrl(rota);
+  }
 }
