@@ -28,9 +28,9 @@ import {
 } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-cadastro-vendas',
-  templateUrl: './cadastro-vendas.page.html',
-  styleUrls: ['./cadastro-vendas.page.scss'],
+  selector: 'app-registrar-vendas',
+  templateUrl: './registrar-vendas.page.html',
+  styleUrls: ['./registrar-vendas.page.scss'],
   standalone: true,
   imports: [
     IonContent,
@@ -59,7 +59,7 @@ import {
     ReactiveFormsModule,
   ],
 })
-export class CadastroVendasPage implements OnInit {
+export class RegistrarVendasPage implements OnInit {
   pixSelecionado = false;
   dinheiroSelecionado = false;
   creditoSelecionado = false;

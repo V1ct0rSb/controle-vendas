@@ -20,9 +20,9 @@ import {
 } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-cadastrar-despesas',
-  templateUrl: './cadastrar-despesas.page.html',
-  styleUrls: ['./cadastrar-despesas.page.scss'],
+  selector: 'app-registrar-despesas',
+  templateUrl: './registrar-despesas.page.html',
+  styleUrls: ['./registrar-despesas.page.scss'],
   standalone: true,
   imports: [
     IonContent,
@@ -44,7 +44,7 @@ import {
     IonDatetime,
   ],
 })
-export class CadastrarDespesasPage {
+export class RegistrarDespesasPage {
   // Data atual
   dataAtual = new Date().toLocaleDateString('pt-BR');
 

@@ -11,17 +11,17 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'cadastrar-cliente',
+    path: 'registrar-cliente',
     loadComponent: () =>
-      import('./cadastrar-cliente/cadastrar-cliente.page').then(
-        (m) => m.CadastrarClientePage
+      import('./registrar-cliente/registrar-cliente.page').then(
+        (m) => m.RegistrarClientePage
       ),
   },
   {
-    path: 'cadastrar-veiculos',
+    path: 'registrar-veiculos',
     loadComponent: () =>
-      import('./cadastrar-veiculos/cadastrar-veiculos.page').then(
-        (m) => m.CadastrarVeiculosPage
+      import('./registrar-veiculos/registrar-veiculos.page').then(
+        (m) => m.RegistrarVeiculosPage
       ),
   },
   {
@@ -39,33 +39,42 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'cadastro-vendas',
+    path: 'registrar-vendas',
     loadComponent: () =>
-      import('./cadastro-vendas/cadastro-vendas.page').then(
-        (m) => m.CadastroVendasPage
+      import('./registrar-vendas/registrar-vendas.page').then(
+        (m) => m.RegistrarVendasPage
       ),
   },
   {
-    path: 'cadastrar-despesas',
+    path: 'registrar-despesas',
     loadComponent: () =>
-      import('./cadastrar-despesas/cadastrar-despesas.page').then(
-        (m) => m.CadastrarDespesasPage
+      import('./registrar-despesas/registrar-despesas.page').then(
+        (m) => m.RegistrarDespesasPage
       ),
   },
   {
     path: 'buscar-cliente',
-    loadComponent: () => import('./buscar-cliente/buscar-cliente.page').then( m => m.BuscarClientePage)
+    loadComponent: () =>
+      import('./buscar-cliente/buscar-cliente.page').then(
+        (m) => m.BuscarClientePage
+      ),
   },
   {
     path: 'movimento-caixa',
-    loadComponent: () => import('./movimento-caixa/movimento-caixa.page').then( m => m.MovimentoCaixaPage)
+    loadComponent: () =>
+      import('./movimento-caixa/movimento-caixa.page').then(
+        (m) => m.MovimentoCaixaPage
+      ),
   },
   {
     path: 'login',
-    loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
+    loadComponent: () => import('./login/login.page').then((m) => m.LoginPage),
   },
   {
     path: 'editar-cliente',
-    loadComponent: () => import('./editar-cliente/editar-cliente.page').then( m => m.EditarClientePage)
+    loadComponent: () =>
+      import('./editar-cliente/editar-cliente.page').then(
+        (m) => m.EditarClientePage
+      ),
   },
 ];

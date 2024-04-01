@@ -4,7 +4,10 @@ import { ToastController } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormGroup } from '@angular/forms';
-import { validateCpfCnpj, validateTelefone } from '../cadastrar-cliente/validacaoCliente';
+import {
+  validateCpfCnpj,
+  validateTelefone,
+} from '../registrar-cliente/validacaoCliente';
 import {
   IonContent,
   IonHeader,

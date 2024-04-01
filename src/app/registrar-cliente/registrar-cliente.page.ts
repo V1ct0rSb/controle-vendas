@@ -23,9 +23,9 @@ import {
 } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-cadastrar-cliente',
-  templateUrl: './cadastrar-cliente.page.html',
-  styleUrls: ['./cadastrar-cliente.page.scss'],
+  selector: 'app-registrar-cliente',
+  templateUrl: './registrar-cliente.page.html',
+  styleUrls: ['./registrar-cliente.page.scss'],
   standalone: true,
   imports: [
     IonContent,
@@ -46,7 +46,7 @@ import {
     ReactiveFormsModule,
   ],
 })
-export class CadastrarClientePage {
+export class RegistrarClientePage {
   clienteForm: FormGroup;
 
   constructor(
