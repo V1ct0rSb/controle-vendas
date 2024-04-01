@@ -1,0 +1,91 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Débitos dos Clientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Lista de débitos dos clientes -->
+  <ion-searchbar placeholder="Digite o Nome do Cliente"></ion-searchbar>
+  <ion-list>
+    <!-- Cliente 1 -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>João da Silva</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <p>Data da compra: 2022-01-01</p>
+          </ion-col>
+          <ion-col>
+            <p>Item comprado: Areia grossa</p>
+          </ion-col>
+          <ion-col>
+            <p>Valor da compra: R$ 500,00</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>Data da compra: 2022-01-01</p>
+          </ion-col>
+          <ion-col>
+            <p>Item comprado: Areia média</p>
+          </ion-col>
+          <ion-col>
+            <p>Valor da compra: R$ 500,00</p>
+          </ion-col>
+        </ion-row>
+        <h3>Total a pagar: R$ 1000,00</h3>
+        <!-- Botão Pago -->
+        <ion-button
+          expand="full"
+          (click)="confirmarPagamento()"
+          [disabled]="pagamentoConfirmado"
+          >Pago</ion-button
+        >
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Cliente 2 -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Paulo dos Santos</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <p>Data da compra: 2022-01-01</p>
+          </ion-col>
+          <ion-col>
+            <p>Item comprado: Areia grossa</p>
+          </ion-col>
+          <ion-col>
+            <p>Valor da compra: R$ 500,00</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <p>Data da compra: 2022-01-01</p>
+          </ion-col>
+          <ion-col>
+            <p>Item comprado: Areia média</p>
+          </ion-col>
+          <ion-col>
+            <p>Valor da compra: R$ 500,00</p>
+          </ion-col>
+        </ion-row>
+        <h3>Total a pagar: R$ 1000,00</h3>
+        <ion-button
+          expand="full"
+          (click)="confirmarPagamento()"
+          [disabled]="pagamentoConfirmado"
+          >Pago</ion-button
+        >
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

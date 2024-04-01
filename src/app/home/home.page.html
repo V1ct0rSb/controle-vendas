@@ -49,7 +49,7 @@
       Vendas</ion-button
     >
 
-    <!-- Botão de Cadatrar Despesas  -->
+    <!-- Botão de Cadatrar Despesas e Receitas  -->
     <ion-button expand="block" (click)="navegarPara('registrar-despesas')"
       ><img src="assets/icon/carteira.png" slot="start" /> Registrar Despesas e
       Receitas</ion-button
@@ -61,10 +61,16 @@
       Encerrar Caixa</ion-button
     >
 
-    <!-- Botão de Encerrar Caixa   -->
+    <!-- Botão de Sincronizar  -->
     <ion-button expand="block">
       <img src="assets/icon/sincronizar.png" slot="start" />
       Sincronizar</ion-button
+    >
+
+    <!-- Botão de Debitos dos Clientes   -->
+    <ion-button expand="block" (click)="navegarPara('debitos-clientes')">
+      <img src="assets/icon/a-pagar.png" slot="start" />
+      Debitos dos Clientes</ion-button
     >
 
     <!--Botão de Sair  -->
