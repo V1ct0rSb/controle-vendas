@@ -60,32 +60,43 @@ export class RegistrarClientePage {
     });
   }
 
+  // Método para cadastrar um cliente
   async cadastrarCliente() {
+    // Se o formulário é válido
     if (this.clienteForm && this.clienteForm.valid) {
+      // Log dos valores do formulário
       console.warn(this.clienteForm.value);
+      // Criação de um toast de sucesso
       const toast = await this.toastController.create({
         message: 'Cliente registrado com sucesso!',
         duration: 2000,
         color: 'success',
       });
+      // Apresentação do toast
       toast.present();
 
-      // Limpar o formulário
+      // Limpeza do formulário
       this.clienteForm.reset();
     } else {
+      // Mensagem de erro padrão
       let errorMessage = 'Por favor, preencha todos os campos obrigatórios.';
+      // Se o CPF/CNPJ não é válido
       if (this.clienteForm?.get('cpfCnpj')?.hasError('cpfCnpjNotValid')) {
         errorMessage = 'O CPF/CNPJ inserido não é válido.';
-      } else if (
+      }
+      // Se o telefone não é válido
+      else if (
         this.clienteForm?.get('telefone')?.hasError('telefoneNotValid')
       ) {
         errorMessage = 'O telefone inserido não é válido.';
       }
+      // Criação de um toast de erro
       const toast = await this.toastController.create({
         message: errorMessage,
         duration: 2000,
         color: 'danger',
       });
+      // Apresentação do toast
       toast.present();
     }
   }
