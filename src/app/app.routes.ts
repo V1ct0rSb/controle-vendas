@@ -79,6 +79,9 @@ export const routes: Routes = [
   },
   {
     path: 'debitos-clientes',
-    loadComponent: () => import('./debitos-clientes/debitos-clientes.page').then( m => m.DebitosClientesPage)
+    loadComponent: () =>
+      import('./debitos-clientes/debitos-clientes.page').then(
+        (m) => m.DebitosClientesPage
+      ),
   },
 ];

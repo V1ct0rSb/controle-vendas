@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ToastController } from '@ionic/angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import {
   IonContent,
   IonHeader,
@@ -42,11 +45,46 @@ import {
     IonButtons,
     IonBackButton,
     IonDatetime,
+    ReactiveFormsModule,
   ],
 })
 export class RegistrarDespesasPage {
+  despesaForm: FormGroup;
+
   // Data atual
   dataAtual = new Date().toLocaleDateString('pt-BR');
 
-  constructor() {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private toastController: ToastController
+  ) {
+    this.despesaForm = this.formBuilder.group({
+      descricao: ['', Validators.required],
+      quantidade: ['', Validators.required],
+      dataAtual: ['', Validators.required],
+      valor: ['', Validators.required],
+    });
+  }
+
+  async cadastrarDespesa() {
+    if (this.despesaForm && this.despesaForm.valid) {
+      console.warn(this.despesaForm.value);
+      const toast = await this.toastController.create({
+        message: 'Despesa registrada com sucesso!',
+        duration: 2000,
+        color: 'success',
+      });
+      toast.present();
+
+      // Limpar o formulário
+      this.despesaForm.reset();
+    } else {
+      const toast = await this.toastController.create({
+        message: 'Por favor, preencha todos os campos obrigatórios.',
+        duration: 2000,
+        color: 'danger',
+      });
+      toast.present();
+    }
+  }
 }
