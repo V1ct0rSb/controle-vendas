@@ -25,6 +25,8 @@ import {
   IonBackButton,
   IonSearchbar,
   IonList,
+  IonSelect,
+  IonSelectOption,
 } from '@ionic/angular/standalone';
 
 @Component({
@@ -52,6 +54,8 @@ import {
     IonSearchbar,
     IonList,
     ReactiveFormsModule,
+    IonSelect,
+    IonSelectOption,
   ],
 })
 export class EditarClientePage {
@@ -65,6 +69,7 @@ export class EditarClientePage {
       nome: ['', Validators.required],
       cpfCnpj: ['', [Validators.required, validateCpfCnpj]],
       telefone: ['', [Validators.required, validateTelefone]],
+      carroPrincipal: ['', Validators.required],
     });
   }
 
