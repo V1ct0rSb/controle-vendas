@@ -40,12 +40,18 @@
           </ion-col>
         </ion-row>
         <h3>Total a pagar: R$ 1000,00</h3>
+        <!-- Campo para inserir o valor do pagamento -->
+        <ion-item>
+          <ion-input
+            type="number"
+            min="0"
+            step="0.01"
+            label="Valor do Pagamento"
+          ></ion-input>
+        </ion-item>
         <!-- Botão Pago -->
-        <ion-button
-          expand="full"
-          (click)="confirmarPagamento()"
-          [disabled]="pagamentoConfirmado"
-          >Pago</ion-button
+        <ion-button expand="full" (click)="confirmarPagamento()"
+          >Pagar</ion-button
         >
       </ion-card-content>
     </ion-card>
@@ -79,11 +85,17 @@
           </ion-col>
         </ion-row>
         <h3>Total a pagar: R$ 1000,00</h3>
-        <ion-button
-          expand="full"
-          (click)="confirmarPagamento()"
-          [disabled]="pagamentoConfirmado"
-          >Pago</ion-button
+        <!-- Campo para inserir o valor do pagamento -->
+        <ion-item>
+          <ion-input
+            type="number"
+            min="0"
+            step="0.01"
+            label="Valor do Pagamento"
+          ></ion-input>
+        </ion-item>
+        <ion-button expand="full" (click)="confirmarPagamento()"
+          >Pagar</ion-button
         >
       </ion-card-content>
     </ion-card>

@@ -71,7 +71,7 @@ export class DebitosClientesPage {
     // Criando um alerta
     const alert = await this.alertController.create({
       header: 'Confirmação',
-      message: 'Tem certeza de que deseja marcar este débito como pago?',
+      message: 'Tem certeza de que deseja efetuar o pagamento pago?',
       buttons: [
         {
           text: 'Cancelar',
@@ -83,7 +83,7 @@ export class DebitosClientesPage {
           // Quando o botão 'Sim' é clicado, o pagamento é marcado como confirmado
           handler: () => {
             this.pagamentoConfirmado = true;
-            console.log('Débito marcado como pago');
+            console.log('Débito pago confirmado');
           },
         },
       ],
