@@ -17,29 +17,7 @@
         <ion-card-title>João da Silva</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-row>
-          <ion-col>
-            <p>Data da compra: 2022-01-01</p>
-          </ion-col>
-          <ion-col>
-            <p>Item comprado: Areia grossa</p>
-          </ion-col>
-          <ion-col>
-            <p>Valor da compra: R$ 500,00</p>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <p>Data da compra: 2022-01-10</p>
-          </ion-col>
-          <ion-col>
-            <p>Item comprado: Areia média</p>
-          </ion-col>
-          <ion-col>
-            <p>Valor da compra: R$ 500,00</p>
-          </ion-col>
-        </ion-row>
-        <h3>Total a pagar: R$ 1000,00</h3>
+        <h2>Total a pagar: R$ 1000,00</h2>
         <!-- Campo para inserir o valor do pagamento -->
         <ion-item>
           <ion-input
@@ -59,32 +37,10 @@
     <!-- Cliente 2 -->
     <ion-card>
       <ion-card-header>
-        <ion-card-title>Paulo dos Santos</ion-card-title>
+        <ion-card-title>Maria da Silva</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-row>
-          <ion-col>
-            <p>Data da compra: 2022-01-11</p>
-          </ion-col>
-          <ion-col>
-            <p>Item comprado: Areia grossa</p>
-          </ion-col>
-          <ion-col>
-            <p>Valor da compra: R$ 500,00</p>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <p>Data da compra: 2022-01-12</p>
-          </ion-col>
-          <ion-col>
-            <p>Item comprado: Areia média</p>
-          </ion-col>
-          <ion-col>
-            <p>Valor da compra: R$ 500,00</p>
-          </ion-col>
-        </ion-row>
-        <h3>Total a pagar: R$ 1000,00</h3>
+        <h2>Total a pagar: R$ 500,00</h2>
         <!-- Campo para inserir o valor do pagamento -->
         <ion-item>
           <ion-input
@@ -94,6 +50,53 @@
             label="Valor do Pagamento"
           ></ion-input>
         </ion-item>
+        <!-- Botão Pago -->
+        <ion-button expand="full" (click)="confirmarPagamento()"
+          >Pagar</ion-button
+        >
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Cliente 3 -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Carlos da Silva</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>Total a pagar: R$ 200,00</h2>
+        <!-- Campo para inserir o valor do pagamento -->
+        <ion-item>
+          <ion-input
+            type="number"
+            min="0"
+            step="0.01"
+            label="Valor do Pagamento"
+          ></ion-input>
+        </ion-item>
+        <!-- Botão Pago -->
+        <ion-button expand="full" (click)="confirmarPagamento()"
+          >Pagar</ion-button
+        >
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Cliente 4 -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Juliana da Silva</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>Total a pagar: R$ 300,00</h2>
+        <!-- Campo para inserir o valor do pagamento -->
+        <ion-item>
+          <ion-input
+            type="number"
+            min="0"
+            step="0.01"
+            label="Valor do Pagamento"
+          ></ion-input>
+        </ion-item>
+        <!-- Botão Pago -->
         <ion-button expand="full" (click)="confirmarPagamento()"
           >Pagar</ion-button
         >
