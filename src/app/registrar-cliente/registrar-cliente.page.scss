@@ -13,3 +13,28 @@ ion-button {
   margin: 2.5rem auto 0 auto;
   width: 70%;
 }
+
+ion-header {
+  background-color: #3880ff;
+}
+
+ion-toolbar {
+  --background: ##3880ff;
+}
+
+ion-title,
+ion-back-button {
+  color: white;
+}
+
+ion-card {
+  background: #d4d4d4;
+}
+
+ion-item {
+  padding-bottom: 40px;
+}
+
+ion-button {
+  margin-bottom: 280px;
+}
