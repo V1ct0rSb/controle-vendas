@@ -1,0 +1,32 @@
+ion-header {
+  background-color: #3880ff;
+}
+
+ion-toolbar {
+  --background: ##3880ff;
+}
+
+ion-title,
+ion-back-button {
+  color: white;
+}
+
+ion-content {
+  --background: #d4d4d4;
+}
+
+ion-searchbar {
+  margin: 20px 0 20px 0;
+}
+
+ion-list {
+  width: 95%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+ion-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

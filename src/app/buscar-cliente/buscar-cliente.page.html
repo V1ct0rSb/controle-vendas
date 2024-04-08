@@ -9,90 +9,86 @@
 
 <ion-content [fullscreen]="true">
   <ion-searchbar placeholder="Digite o Nome do Cliente"></ion-searchbar>
-  <ion-list>
-    <!-- Cliente 01 -->
-    <ion-item>
-      <ion-label>
-        <h2>Maria da Silva Marques</h2>
+
+  <!-- Cliente 01 -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Maria da Silva Marques</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="text">
+        <p>CPF: 123.345.678-90</p>
+        <p>Telefone: 912345678</p>
+        <p>Carro Principal: JOB3219</p>
+        <p>Crédito Disponível: 5.000</p>
+      </div>
+
+      <ion-button
+        class="button-right"
+        fill="outline"
+        (click)="navegarPara('editar-cliente')"
+        >Editar</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Cliente 02 -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>João Santos dos Anjos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="text">
         <p>CPF: 123.345.678-90</p>
         <p>Telefone: 912345678</p>
         <p>Carro Principal: JOB3219</p>
         <p>Crédito Disponível: 0</p>
-      </ion-label>
+      </div>
+
+      <ion-button fill="outline" (click)="navegarPara('editar-cliente')"
+        >Editar</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Cliente 03 -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Lucas da Silva Marques</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="text">
+        <p>CPF: 123.345.678-90</p>
+        <p>Telefone: 912345678</p>
+        <p>Carro Principal: JOB3219</p>
+        <p>Crédito Disponível: 1.000</p>
+      </div>
+
       <ion-button
+        class="button-right"
         fill="outline"
-        slot="end"
         (click)="navegarPara('editar-cliente')"
         >Editar</ion-button
       >
-    </ion-item>
+    </ion-card-content>
+  </ion-card>
 
-    <!-- Cliente 02 -->
-    <ion-item>
-      <ion-label>
-        <h2>João Santos dos Anjos</h2>
-        <p>Telefone: 912345678</p>
-        <p>Veiculo Principal: NEU8660</p>
+  <!-- Cliente 04 -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Luis Santos dos Anjos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="text">
         <p>CPF: 123.345.678-90</p>
-        <p>Crédito Disponível: 1000</p>
-      </ion-label>
-      <ion-button
-        fill="outline"
-        slot="end"
-        (click)="navegarPara('editar-cliente')"
-        >Editar</ion-button
-      >
-    </ion-item>
-
-    <!-- Cliente 03 -->
-    <ion-item>
-      <ion-label>
-        <h2>Tiago Costa Pereira</h2>
         <p>Telefone: 912345678</p>
-        <p>Veiculo Principal: NEU8660</p>
-        <p>CPF: 123.345.678-90</p>
-        <p>Crédito Disponível: 5000</p>
-      </ion-label>
-      <ion-button
-        fill="outline"
-        slot="end"
-        (click)="navegarPara('editar-cliente')"
-        >Editar</ion-button
-      >
-    </ion-item>
-
-    <!-- Cliente 04 -->
-    <ion-item>
-      <ion-label>
-        <h2>Rafael Fernandes</h2>
-        <p>Telefone: 912345678</p>
-        <p>Veiculo Principal: FBY8546</p>
-        <p>CPF: 123.345.678-90</p>
+        <p>Carro Principal: JOB3219</p>
         <p>Crédito Disponível: 500</p>
-      </ion-label>
-      <ion-button
-        fill="outline"
-        slot="end"
-        (click)="navegarPara('editar-cliente')"
-        >Editar</ion-button
-      >
-    </ion-item>
+      </div>
 
-    <!-- Cliente 05 -->
-    <ion-item>
-      <ion-label>
-        <h2>Laura Martins</h2>
-        <p>Telefone: 912345678</p>
-        <p>Veiculo Principal: HNY6404</p>
-        <p>CPF: 123.345.678-90</p>
-        <p>Crédito Disponível: 500</p>
-      </ion-label>
-      <ion-button
-        fill="outline"
-        slot="end"
-        (click)="navegarPara('editar-cliente')"
+      <ion-button fill="outline" (click)="navegarPara('editar-cliente')"
         >Editar</ion-button
       >
-    </ion-item>
-  </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
