@@ -95,6 +95,44 @@ export class RegistrarVendasPage implements OnInit {
       },
       { validators: [this.checkTotal, this.checkPayment] }
     );
+    // Observa as mudanças nos campos de seleção de pagamento
+    this.vendaForm.controls['pixSelecionado'].valueChanges.subscribe(() =>
+      this.updatePaymentValue()
+    );
+    this.vendaForm.controls['dinheiroSelecionado'].valueChanges.subscribe(() =>
+      this.updatePaymentValue()
+    );
+    this.vendaForm.controls['creditoSelecionado'].valueChanges.subscribe(() =>
+      this.updatePaymentValue()
+    );
+    this.vendaForm.controls['cartaoSelecionado'].valueChanges.subscribe(() =>
+      this.updatePaymentValue()
+    );
+  }
+
+  // Atualiza o valor do pagamento com base no valor total da venda
+  updatePaymentValue() {
+    const totalVenda = this.vendaForm.controls['totalVenda'].value;
+    // Verifica se apenas uma forma de pagamento está selecionada
+    const paymentMethods = [
+      this.vendaForm.controls['pixSelecionado'].value,
+      this.vendaForm.controls['dinheiroSelecionado'].value,
+      this.vendaForm.controls['creditoSelecionado'].value,
+      this.vendaForm.controls['cartaoSelecionado'].value,
+    ];
+    const selectedPaymentMethods = paymentMethods.filter(Boolean);
+    if (selectedPaymentMethods.length === 1) {
+      // Se apenas uma forma de pagamento estiver selecionada, define o valor do total da venda para essa forma de pagamento
+      if (this.vendaForm.controls['pixSelecionado'].value) {
+        this.vendaForm.controls['valorPix'].setValue(totalVenda);
+      } else if (this.vendaForm.controls['dinheiroSelecionado'].value) {
+        this.vendaForm.controls['valorDinheiro'].setValue(totalVenda);
+      } else if (this.vendaForm.controls['creditoSelecionado'].value) {
+        this.vendaForm.controls['valorCredito'].setValue(totalVenda);
+      } else if (this.vendaForm.controls['cartaoSelecionado'].value) {
+        this.vendaForm.controls['valorCartao'].setValue(totalVenda);
+      }
+    }
   }
 
   // Verifica se os campos de pagamento foram preenchidos corretamente
@@ -169,6 +207,31 @@ export class RegistrarVendasPage implements OnInit {
     // Verifica os campos de pagamento e o total da venda
     this.checkPayment(this.vendaForm);
     this.checkTotal(this.vendaForm);
+
+    this.vendaForm.controls['totalVenda'].valueChanges.subscribe(
+      (totalVenda) => {
+        // Verifica se apenas uma forma de pagamento está selecionada
+        const paymentMethods = [
+          this.vendaForm.controls['pixSelecionado'].value,
+          this.vendaForm.controls['dinheiroSelecionado'].value,
+          this.vendaForm.controls['creditoSelecionado'].value,
+          this.vendaForm.controls['cartaoSelecionado'].value,
+        ];
+        const selectedPaymentMethods = paymentMethods.filter(Boolean);
+        if (selectedPaymentMethods.length === 1) {
+          // Se apenas uma forma de pagamento estiver selecionada, define o valor do total da venda para essa forma de pagamento
+          if (this.vendaForm.controls['pixSelecionado'].value) {
+            this.vendaForm.controls['valorPix'].setValue(totalVenda);
+          } else if (this.vendaForm.controls['dinheiroSelecionado'].value) {
+            this.vendaForm.controls['valorDinheiro'].setValue(totalVenda);
+          } else if (this.vendaForm.controls['creditoSelecionado'].value) {
+            this.vendaForm.controls['valorCredito'].setValue(totalVenda);
+          } else if (this.vendaForm.controls['cartaoSelecionado'].value) {
+            this.vendaForm.controls['valorCartao'].setValue(totalVenda);
+          }
+        }
+      }
+    );
   }
 
   // Método para cadastrar uma venda
