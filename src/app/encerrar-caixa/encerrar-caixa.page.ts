@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AlertController } from '@ionic/angular';
 import {
   IonContent,
   IonHeader,
@@ -18,7 +19,7 @@ import {
   IonBackButton,
   IonSelect,
   IonSelectOption,
-  IonList
+  IonList,
 } from '@ionic/angular/standalone';
 
 @Component({
@@ -45,9 +46,48 @@ import {
     IonBackButton,
     IonSelect,
     IonSelectOption,
-    IonList
+    IonList,
   ],
 })
 export class EncerrarCaixaPage {
-  constructor() {}
+  // Variável de estado para controlar se o botão está desabilitado
+  isDisabled = false;
+
+  constructor(
+    // Injeção do AlertController
+    private alertController: AlertController
+  ) {}
+
+  async confirmarEncerramento() {
+    // Desabilita o botão
+    this.isDisabled = true;
+
+    const alert = await this.alertController.create({
+      header: 'Confirmação',
+      message: 'Você realmente deseja encerrar o caixa?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            // Habilita o botão se o usuário cancelar o encerramento
+            this.isDisabled = false;
+          },
+        },
+        {
+          text: 'Encerrar',
+          handler: () => {
+            this.encerrarCaixa();
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+  }
+
+  encerrarCaixa() {
+    // Aqui você pode adicionar o código para encerrar o caixa
+  }
 }

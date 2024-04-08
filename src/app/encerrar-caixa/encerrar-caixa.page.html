@@ -34,7 +34,12 @@
         <ion-label>Total do Dia: R$ 4.000,00</ion-label>
       </ion-item>
     </ion-card-content>
-    <ion-button expand="block" [disabled]="true"> Encerrar Caixa </ion-button>
+    <ion-button
+      expand="block"
+      [disabled]="isDisabled"
+      (click)="confirmarEncerramento()"
+      >Encerrar Caixa</ion-button
+    >
   </ion-card>
 
   <!-- Caixa 02 -->
@@ -63,7 +68,12 @@
         <ion-label>Total do Dia: R$ 8.000,00</ion-label>
       </ion-item>
     </ion-card-content>
-    <ion-button expand="block"> Encerrar Caixa </ion-button>
+    <ion-button
+      expand="block"
+      [disabled]="isDisabled"
+      (click)="confirmarEncerramento()"
+      >Encerrar Caixa</ion-button
+    >
   </ion-card>
 
   <!-- Caixa 03 -->
@@ -92,6 +102,11 @@
         <ion-label>Total do Dia: R$ 8.000,00</ion-label>
       </ion-item>
     </ion-card-content>
-    <ion-button expand="block"> Encerrar Caixa </ion-button>
+    <ion-button
+      expand="block"
+      [disabled]="isDisabled"
+      (click)="confirmarEncerramento()"
+      >Encerrar Caixa</ion-button
+    >
   </ion-card>
 </ion-content>
