@@ -16,12 +16,37 @@ ion-button {
 
 // Ver senha
 ion-item ion-button {
-  max-width: 40px;
+  max-width: 2.5rem;
   height: auto;
-  margin: 10px auto auto auto;
+  margin: .625rem auto auto auto;
 }
 
 ion-button img {
-  max-width: 28px;
+  max-width: 1.75rem;
   height: auto;
+}
+
+ion-header {
+  background-color: #3880ff;
+}
+
+ion-toolbar {
+  --background: ##3880ff;
+}
+
+ion-title,
+ion-back-button {
+  color: white;
+}
+
+ion-card {
+  background: #d4d4d4;
+}
+
+ion-item {
+  padding-bottom: 2.5rem;
+}
+
+ion-button {
+  margin-bottom: 100%;
 }
