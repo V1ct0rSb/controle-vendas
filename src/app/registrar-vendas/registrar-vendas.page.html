@@ -40,7 +40,7 @@
       <ion-item>
         <ion-select
           formControlName="cliente"
-          label="Selecione o Cliente"
+          label="Cliente"
           placeholder="Cliente"
         >
           <ion-select-option value="1">Cliente 01</ion-select-option>
@@ -52,7 +52,7 @@
       <ion-item>
         <ion-select
           formControlName="placaCarro"
-          label="Selecione a Placa do Carro"
+          label="Placa do Carro"
           placeholder="Placa do Carro"
         >
           <ion-select-option value="1">NVN9654</ion-select-option>
@@ -64,7 +64,7 @@
       <ion-item>
         <ion-select
           formControlName="tipoVeiculo"
-          label="Selecione o Tipo do Veículo"
+          label="Tipo do Veículo"
           placeholder="Tipo"
         >
           <ion-select-option value="1">Toco</ion-select-option>
@@ -99,69 +99,84 @@
       </ion-item>
 
       <!-- Formas de Pagamento -->
-      <ion-item>
-        <ion-label>Pix</ion-label>
-        <ion-checkbox
-          slot="end"
-          formControlName="pixSelecionado"
-          aria-label="Pix"
-        ></ion-checkbox>
-      </ion-item>
-      <ion-item *ngIf="vendaForm?.get('pixSelecionado')?.value">
-        <ion-input
-          type="number"
-          placeholder="Valor do Pix"
-          formControlName="valorPix"
-        ></ion-input>
-      </ion-item>
+      <div class="container-payment">
+        <ion-title>Formas de Pagamento</ion-title>
+        <ion-item class="payment">
+          <ion-label>Pix</ion-label>
+          <ion-checkbox
+            slot="end"
+            formControlName="pixSelecionado"
+            aria-label="Pix"
+          ></ion-checkbox>
+        </ion-item>
+        <ion-item
+          *ngIf="vendaForm?.get('pixSelecionado')?.value"
+          class="payment-input"
+        >
+          <ion-input
+            type="number"
+            placeholder="Valor do Pix"
+            formControlName="valorPix"
+          ></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-label>Dinheiro</ion-label>
-        <ion-checkbox
-          slot="end"
-          formControlName="dinheiroSelecionado"
-          aria-label="Dinheiro"
-        ></ion-checkbox>
-      </ion-item>
-      <ion-item *ngIf="vendaForm?.get('dinheiroSelecionado')?.value">
-        <ion-input
-          type="number"
-          placeholder="Valor em Dinheiro"
-          formControlName="valorDinheiro"
-        ></ion-input>
-      </ion-item>
+        <ion-item class="payment">
+          <ion-label>Dinheiro</ion-label>
+          <ion-checkbox
+            slot="end"
+            formControlName="dinheiroSelecionado"
+            aria-label="Dinheiro"
+          ></ion-checkbox>
+        </ion-item>
+        <ion-item
+          *ngIf="vendaForm?.get('dinheiroSelecionado')?.value"
+          class="payment-input"
+        >
+          <ion-input
+            type="number"
+            placeholder="Valor em Dinheiro"
+            formControlName="valorDinheiro"
+          ></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-label>Crédito</ion-label>
-        <ion-checkbox
-          slot="end"
-          formControlName="creditoSelecionado"
-          aria-label="Crédito"
-        ></ion-checkbox>
-      </ion-item>
-      <ion-item *ngIf="vendaForm?.get('creditoSelecionado')?.value">
-        <ion-input
-          type="number"
-          placeholder="Valor no Crédito"
-          formControlName="valorCredito"
-        ></ion-input>
-      </ion-item>
+        <ion-item class="payment">
+          <ion-label>Crédito</ion-label>
+          <ion-checkbox
+            slot="end"
+            formControlName="creditoSelecionado"
+            aria-label="Crédito"
+          ></ion-checkbox>
+        </ion-item>
+        <ion-item
+          *ngIf="vendaForm?.get('creditoSelecionado')?.value"
+          class="payment-input"
+        >
+          <ion-input
+            type="number"
+            placeholder="Valor no Crédito"
+            formControlName="valorCredito"
+          ></ion-input>
+        </ion-item>
 
-      <ion-item>
-        <ion-label>Cartão</ion-label>
-        <ion-checkbox
-          slot="end"
-          formControlName="cartaoSelecionado"
-          aria-label="Cartão"
-        ></ion-checkbox>
-      </ion-item>
-      <ion-item *ngIf="vendaForm?.get('cartaoSelecionado')?.value">
-        <ion-input
-          type="number"
-          placeholder="Valor no Cartão"
-          formControlName="valorCartao"
-        ></ion-input>
-      </ion-item>
+        <ion-item class="payment">
+          <ion-label>Cartão</ion-label>
+          <ion-checkbox
+            slot="end"
+            formControlName="cartaoSelecionado"
+            aria-label="Cartão"
+          ></ion-checkbox>
+        </ion-item>
+        <ion-item
+          *ngIf="vendaForm?.get('cartaoSelecionado')?.value"
+          class="payment-input"
+        >
+          <ion-input
+            type="number"
+            placeholder="Valor no Cartão"
+            formControlName="valorCartao"
+          ></ion-input>
+        </ion-item>
+      </div>
 
       <ion-button expand="block" type="submit" (click)="cadastrarVenda()"
         >Registrar Venda</ion-button

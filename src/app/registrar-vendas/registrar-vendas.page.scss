@@ -1,15 +1,57 @@
-ion-card {
-  margin-top: 1.25rem;
+/* Estilos para o cabeçalho */
+ion-header {
+  background-color: #3880ff;
 }
 
-// Titulo do Card
+ion-toolbar {
+  --background: #3880ff;
+}
+
+ion-title,
+ion-back-button {
+  color: white;
+}
+
+/* Estilos para o card */
+ion-card {
+  margin-top: 1.25rem;
+  background: #d4d4d4;
+}
+
+/* Estilos para o título do card */
 ion-card-title {
   text-align: center;
   margin: 1.25rem auto;
+  color: #333;
 }
 
-// Botão de Cadastrar
+/* Estilos para os itens */
+ion-item {
+  width: 90%;
+  margin: auto;
+}
+
+/* Estilos para o botão de cadastrar */
 ion-button {
   margin: 2.5rem auto 0.9375rem auto;
   width: 70%;
+}
+
+/* Estilos para o botão de pagamento */
+.container-payment {
+  padding: 0;
+}
+
+.container-payment ion-title {
+  text-align: center;
+  color: #333;
+  margin: 1.875rem 0 1.25rem 0;
+}
+
+.payment-input {
+  padding: 0;
+}
+
+.payment {
+  padding-bottom: 0;
 }
